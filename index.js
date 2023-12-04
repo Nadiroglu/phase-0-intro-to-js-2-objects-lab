@@ -14,10 +14,8 @@ employee[key] = value;
 return employee;
 }
 function deleteFromEmployeeByKey(employee, key) {
-  delete employee.name;
-  return {
-    ...employee,   
-  }
+  const { [key]: deletedProperty, ...newEmployee } = employee;
+  return newEmployee;
 }
 function nondestryctivelydeleteFromEmployeeByKey(employee, key) {
   const modifiedEmployee = { ...employee };
